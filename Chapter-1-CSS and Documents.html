@@ -195,3 +195,73 @@ Key idea:
 
 HTML = what the content is
 CSS = how the content looks -->
+
+
+<!-- 
+======================
+The <link> Tag 
+======================
+
+The <link> tag is used to connect an external CSS file to an HTML document.
+
+<link rel="stylesheet" type="text/css" href="sheet1.css" media="all">
+
+External stylesheets are separate .css files, not embedded in HTML.
+<link> must be placed inside <head>, never inside <body>.
+The browser loads the CSS file and applies its rules to the HTML document.
+External stylesheets contain only CSS rules and CSS comments — no HTML markup.
+CSS files are usually saved with a .css extension.
+Using .css is recommended because:
+Some browsers require it
+Some servers won’t serve CSS correctly without it
+@import can load additional stylesheets but must appear at the top of a CSS file.
+
+Key benefit:
+External stylesheets keep structure (HTML) and presentation (CSS) cleanly separated. -->
+
+<!--
+=======================
+ Attributes 
+=======================
+
+- rel="stylesheet"
+Defines the relationship between HTML and the linked file
+Tells the browser the file is a stylesheet
+
+- type="text/css"
+Specifies the content type of the linked file
+Helps the browser identify the stylesheet language
+Recommended for compatibility, even if optional in modern HTML
+
+- href
+URL of the external CSS file
+Can be relative or absolute
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://example.com/style.css">
+
+
+- media
+Specifies where the stylesheet should apply
+Accepts one or more media types, separated by commas
+
+<link rel="stylesheet" href="print.css" media="print">
+<link rel="stylesheet" href="visual.css" media="screen, projection">
+
+
+- Multiple stylesheets
+Browsers load all linked stylesheets
+CSS rules from all files are combined
+
+<link rel="stylesheet" href="basic.css">
+<link rel="stylesheet" href="theme.css">
+
+
+- title attribute
+Optional and rarely used
+Can affect alternate stylesheets if misused
+Important for advanced stylesheet switching
+
+
+Key takeaway:
+The <link> tag connects HTML to external CSS and controls what, how, and where styles are applied. -->
