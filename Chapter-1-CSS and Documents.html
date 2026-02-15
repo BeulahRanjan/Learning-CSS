@@ -296,3 +296,61 @@ Persistent stylesheet (always applied)
 
 In this example, default.css is used initially, bigtext.css or colors.css can be selected by the user, and base.css is always applied regardless of the 
 selected style. -->
+
+
+<!--
+========================
+ style Element
+ ========================
+
+The style element is used to include CSS directly within an HTML document. It is placed inside the <head> section and must include the attribute 
+    type="text/css" when defining CSS rules.
+
+<style type="text/css">
+  body {
+    font-family: Arial, sans-serif;
+  }
+</style>
+
+
+The CSS rules written between the opening <style> and closing </style> tags form the document (or embedded) stylesheet. These styles apply only to the 
+document in which they appear.
+
+The style element can also include a media attribute to control when the styles are applied (such as screen or print), and it may use the @import directive 
+to load external stylesheets. -->
+
+<!-- 
+=================================
+@import Directive
+=================================
+The @import directive is used inside a <style> element or an external stylesheet to load and apply external CSS files. It performs a function similar to the <link> tag but differs in syntax and placement.
+
+The @import statement must appear before all other CSS rules in a stylesheet; otherwise, it will be ignored by the browser. Multiple @import directives can be used, and all imported stylesheets are loaded and applied—there is no support for alternate stylesheets.
+
+Media types can also be specified to control when an imported stylesheet is applied.
+
+@import url("styles.css") screen;
+@import url("print.css") print;
+
+body {
+  color: black;
+}
+
+
+The @import directive is especially useful in external stylesheets, where the <link> element cannot be used.
+
+Relative and Absolute URLs
+
+Relative URL
+Specifies a path relative to the current file’s location.
+
+@import url("basic-text.css");
+
+
+Absolute URL
+Specifies the full address, including the protocol and domain name.
+
+@import url("https://example.org/library/layout.css");
+
+
+Relative URLs are shorter and commonly used within the same project, while absolute URLs are useful when referencing stylesheets hosted on external servers. -->
