@@ -265,3 +265,34 @@ Important for advanced stylesheet switching
 
 Key takeaway:
 The <link> tag connects HTML to external CSS and controls what, how, and where styles are applied. -->
+
+
+<!--
+===============================
+ Alternate Stylesheets
+================================
+
+HTML allows authors to define alternate stylesheets, which users can choose to change the presentation of a document. Alternate stylesheets are declared using 
+the rel="alternate stylesheet" attribute and are applied only when selected by the user.
+
+Browsers that support alternate stylesheets use the title attribute of the <link> element to present a list of available styles. The stylesheet with rel="stylesheet"
+ and a title is treated as the preferred stylesheet and is applied by default. When an alternate stylesheet is selected, the preferred stylesheet is disabled.
+
+Stylesheets can also be grouped across media types (such as screen and print) by giving them the same title, allowing consistent presentation choices.
+
+If a stylesheet has no title, it becomes a persistent stylesheet and is always applied.
+
+Example
+Preferred stylesheet
+<link rel="stylesheet" href="default.css" title="Default" media="screen">
+
+Alternate stylesheets
+<link rel="alternate stylesheet" href="bigtext.css" title="Big Text" media="screen">
+<link rel="alternate stylesheet" href="colors.css" title="High Contrast" media="screen">
+
+Persistent stylesheet (always applied)
+<link rel="stylesheet" href="base.css">
+
+
+In this example, default.css is used initially, bigtext.css or colors.css can be selected by the user, and base.css is always applied regardless of the 
+selected style. -->
