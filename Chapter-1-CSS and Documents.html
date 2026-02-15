@@ -354,3 +354,26 @@ Specifies the full address, including the protocol and domain name.
 
 
 Relative URLs are shorter and commonly used within the same project, while absolute URLs are useful when referencing stylesheets hosted on external servers. -->
+
+<!-- 
+==================================
+HTTP Linking 
+==================================
+
+CSS can also be associated with HTML documents using HTTP headers, instead of <link> or <style> elements. In this method, the web server sends a Link header 
+    that tells the browser to load a stylesheet as if it were linked in the document.
+
+This technique is configured at the server level (for example, using Apache’s .htaccess or httpd.conf files) and applies the stylesheet to all documents served 
+from a specified directory.
+
+Example (Apache .htaccess)
+Header add Link "</ui/testing.css>; rel=stylesheet; type=text/css"
+
+Example (httpd.conf)
+<Directory /path/to/public/html>
+  Header add Link "</ui/testing.css>; rel=stylesheet; type=text/css"
+</Directory>
+
+
+In supporting browsers, the effect is the same as using a <link> element in HTML. However, browser support is limited (mainly Firefox and Opera), so this 
+method is typically used in development environments. For maximum compatibility, using the <link> element remains the preferred approach. -->
